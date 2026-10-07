@@ -1,48 +1,43 @@
 # CidroyAssessment_WholeCart
 
-## Overview
-
-QA Automation assessment for the **WholeCart B2B Marketplace** application.
+QA Automation assessment for the **WholeCart B2B Marketplace**.
 
 ## Tech Stack
 
 * Java
 * Selenium WebDriver
 * TestNG
+* Rest Assured
 * Maven
-* IntelliJ IDEA
 * Git & GitHub
 
-## Current Automation
+## Automation
 
-The project currently includes:
+### UI Automation
 
-* Buyer login UI automation
-* Page Object Model (POM)
-* Configuration management using `testdata.properties`
-* Secure handling of login credentials using environment variables
-* TestNG test execution
+* Login validation for Buyer, Seller and Operator accounts
+* TestNG DataProvider used for multiple accounts
+* Role-based landing page validation
+
+### API Automation
+
+* Login API validation for all 7 accounts
+* HTTP status code validation
+* Token presence validation
+* Role validation
+* User name validation
 
 ## Configuration
 
 Application URL is maintained in:
 
-```text
-src/main/resources/testdata.properties
-```
+`src/main/resources/testdata.properties`
 
-Buyer credentials are stored as local environment variables:
-
-```text
-BUYER_USERNAME
-BUYER_PASSWORD
-```
-
-Credentials are not stored in the GitHub repository.
+Login credentials are stored using local environment variables and are not committed to GitHub.
 
 ## Test Execution
 
-Run the tests using:
+Run all tests using:
 
 ```bash
 mvn clean test
@@ -52,6 +47,6 @@ Tests can also be executed directly from IntelliJ IDEA.
 
 ## Test Result
 
-The buyer login automation has been successfully executed.
+UI Login Tests: **7 Passed**
 
-**Result: PASS**
+API Login Tests: **7 Passed**
